@@ -1,0 +1,19 @@
+.day_normal {
+    width : 100px;
+    background-color : #f0f;
+}
+
+.day_red {
+    width : 150px;
+    background-color : #ff0;
+}
+
+.day_sat {
+    width : 200px;
+    background-color : #f00;
+}
+
+.day_sun {
+    width : 200px;
+    background-color : #0ff;
+}

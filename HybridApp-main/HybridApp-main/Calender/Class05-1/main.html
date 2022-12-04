@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>Lecture 05</title>
+    <link href="calender_month.css" rel="stylesheet"> 
+</head>
+<body>
+    <div id="main">
+        
+    </div>
+
+<template id="calender_month">
+    <div class="child1">으아 하기가 싫어요</div>
+</template>
+
+<script>
+     if ('content' in document.createElement('template')) {
+      console.log('supports Template');
+      var wctemplate = document.querySelector('#calender_month');
+      var clone = document.importNode(wctemplate, true);
+      document.getElementById('main').appendChild(clone.content);
+    } else {
+      console.log('stop');
+    }
+</script>
+
+</body>
+</html>
