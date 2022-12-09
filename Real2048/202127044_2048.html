@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>2048 GAME</title>
+        <style></style>
+    </head>
+    <script type="text/javascript" src="./jsGame_2048.js"></script>
+	<link rel="stylesheet" href="jsGame.css" type="text/css">
+    <script type="text/javascript">
+    	window.onload = function(){
+	   		window.addEventListener("keydown", e => {
+	   			const key = document.getElementById(e.key);
+	   			if (key) { 
+	   				key.classList.add('pressed');
+	   				key.click();
+	   			}
+	       	});
+	       	window.addEventListener("keyup", e => {
+      		  	const key = document.getElementById(e.key);
+      		  	if (key) key.classList.remove('pressed');
+      		});
+	       	
+	       	//최고점수 조회
+	   		var bestScore = localStorage.getItem("2048_best_score");
+	   		console.log(bestScore);
+	   		if(bestScore > 0){
+	   			document.getElementById("bestScore").innerHTML = bestScore;
+	   		}
+    	}
+    	
+    </script>
+    
+    <body>
+    
+    	<div class="container"> 
+    		<header class="header">
+    			<h1 class="title">2048</h1>
+    			<div class="scorePad">
+    				<dl>
+    					<dt id="scoreType">SCORE</dt>
+    					<dd id="score">0</dd>
+    				</dl>
+    				<dl>
+    					<dt>BEST SCORE</dt>
+    					<dd id="bestScore">0</dd>
+    				</dl>
+    			</div>
+    			</span>	
+    		</header>
+    		
+			<div id="content">
+	    		<div id="intro" class="on">
+					<button id="startBtn" onClick="start();">START</button>
+				</div>
+				<div id="gamearea">
+	                <div class="cell"></div>
+	                <div class="cell"></div>
+	                <div class="cell"></div>
+	                <div class="cell"></div>
+	                <div class="cell"></div>
+	                <div class="cell"></div>
+	                <div class="cell"></div>
+	                <div class="cell"></div>
+	                <div class="cell"></div>
+	                <div class="cell"></div>
+	                <div class="cell"></div>
+	                <div class="cell"></div>
+	                <div class="cell"></div>
+	                <div class="cell"></div>
+	                <div class="cell"></div>
+	                <div class="cell"></div>
+	            </div>
+	        </div>
+	        <div id="btnArea">
+		        <span>
+			        <button id="ArrowUp" onClick="moveNum(this);">▲</button>
+		        </span>
+		        <span>
+			        <button id="ArrowLeft" onClick="moveNum(this);">◀</button>
+			        <button id="ArrowDown" onClick="moveNum(this);">▼</button>
+			        <button id="ArrowRight" onClick="moveNum(this);">▶</button>
+		        </span>
+	        </div>
+        </div>
+    </body>
+</html>
